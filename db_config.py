@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #import mysql.connector
 
 #def get_db_connection():
@@ -17,4 +18,25 @@ def get_db_connection():
         password=os.getenv("fwhOsncSkLuKMyxkQzaYuzkYaHlWsjZm"),
         database=os.getenv("railway"),
         port=os.getenv("3306")
+=======
+#import mysql.connector
+
+#def get_db_connection():
+#    return mysql.connector.connect(
+#        host="localhost",
+#        user="root",
+#        password="Shadha@123",
+#  )
+
+import mysql.connector
+import os
+
+def get_db_connection():
+    return mysql.connector.connect(
+        host=os.getenv("MYSQLHOST"),
+        user=os.getenv("MYSQLUSER"),
+        password=os.getenv("MYSQLPASSWORD"),
+        database=os.getenv("MYSQLDATABASE"),
+        port=os.getenv("MYSQLPORT")
+>>>>>>> a603169abd21802d2d53ddbb60d08bfb34b48abe
     )

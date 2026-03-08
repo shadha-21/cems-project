@@ -1,7 +1,7 @@
 import os
 import mysql.connector
-import webbrowser
-from threading import Timer
+#import webbrowser
+#from threading import Timer
 
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 
@@ -20,7 +20,6 @@ def test_db():
     cursor.close()
     conn.close()
     return str(tables)
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -680,10 +679,14 @@ def hello():
 def logout():
     session.clear()
     return redirect(url_for('home'))
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    app.run(debug=True)
 
 
-def open_browser():
-    webbrowser.open_new("http://127.0.0.1:5000")
+#def open_browser():
+ #   webbrowser.open_new("http://127.0.0.1:5000")
+import os
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
